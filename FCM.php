@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: jone
- * Date: 11/14/16
- * Time: 5:08 PM
- */
 class FCM
 {
     protected $fcmKey;
@@ -16,13 +10,17 @@ class FCM
     }
 
     function setFcmKey(){
-        $this->fcmKey =  env('fcmKey');
+        $this->fcmKey =  ''; # set Your FireBase Notification Key here 
     }
 
     function getFcmKey(){
         return $this->fcmKey;
     }
 
+    # @token = array
+    # @title = string
+    # @body = string
+    # @data = array 
     function send_notification ($tokens  , $title  , $body  , $data = []  ){
 
         $url = 'https://fcm.googleapis.com/fcm/send';
